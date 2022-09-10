@@ -1,0 +1,2 @@
+*,:after,:before{box-sizing:border-box;font-family:system-ui}body{margin:0}#video-grid{display:grid;grid-auto-rows:300px;grid-template-columns:repeat(auto-fill,300px)}.container{position:relative}.container,video{height:100%;width:100%}video{object-fit:cover}.controls{bottom:0;display:flex;flex-direction:row;padding:.25rem;position:absolute;width:100%}.controls>:hover *{fill:cyan}.controls>:hover{cursor:pointer}.controls :not(.controls>*){pointer-events:none}
+/*# sourceMappingURL=main.d60d9b76.css.map*/

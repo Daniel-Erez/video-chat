@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import io from 'socket.io-client';
 import { Peer } from "peerjs";
 import useArray from "./useArray"
@@ -8,7 +8,6 @@ import mute from './assets/speaker off.js'
 import unMute from './assets/speaker.js'
 import openMic from './assets/mic.js'
 import closeMic from './assets/mic off.js'
-import { useState } from 'react';
 
 
 export default function Room() {
@@ -127,7 +126,7 @@ export default function Room() {
 
     function toggleSpeaker() {
         myStream.current.getAudioTracks()[0].enabled=!myStream.current.getAudioTracks()[0].enabled
-        setAmIMute(myStream.current.getAudioTracks()[0].enabled)
+        setAmIMute(!myStream.current.getAudioTracks()[0].enabled)
     }
 
     return (<>
@@ -138,7 +137,7 @@ export default function Room() {
                     <div id={i} className="controls">
                         {i === 0 &&
                             <div onClick={()=>toggleSpeaker()}>
-                                {AmIMute ? openMic : closeMic}
+                                {AmIMute ? closeMic : openMic}
                             </div>}
                         {i !== 0 &&
                             <div onClick={(e) => toggleMute(e)}>
