@@ -11,7 +11,7 @@ import closeMic from './assets/mic off.js'
 
 
 export default function Room() {
-    const socket = useRef(io("http://10.0.0.160:8000/"))
+    const socket = useRef(io("http://10.0.0.140:8000/"))
     const myPeer = useRef(new Peer())
     const vidRef = useRef([]);
     const { array: videos, push: pushVid, update: updateVid, set: setVid } = useArray([{ id: 0 }])

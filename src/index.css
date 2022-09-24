@@ -7,16 +7,29 @@ body{
   margin: 0;
 }
 
+:has(> #video-grid){
+ min-height:100vh;
+display:flex;
+flex-direction: column
+}
+
 #video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%/1, max(300px, 100%/4)), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(max(350px, min(500px,25vw)), 1fr));
+  grid-template-rows:auto;
+  justify-items: center;
   gap:0;
+  background-color:#ccc;
+  padding-block:1.5rem;
+  margin-block: auto;
 }
 
 .container{
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
+  max-width:500px;
+background-color:#fff;
 }
 
 video {
